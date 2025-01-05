@@ -1,10 +1,4 @@
 # javascript-1
-
-
-Here’s a LinkedIn post idea for your project:
-
----
-
 ✨ **Excited to Share My First JavaScript Project!** ✨  
 
 As I dive deeper into web development, I’ve completed my very first project using **JavaScript**, and I couldn’t be more thrilled! 🎉  
