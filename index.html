@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Image on Click</title>
+  <style>
+    img {
+      display: block;
+      margin: 20px auto;
+      width: 200px;
+      height: auto;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    img:hover {
+      transform: scale(1.1);
+    }
+
+    button {
+      display: block;
+      margin: 10px auto;
+      background-color: rgb(161, 224, 224);
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Image to be changed -->
+  <img id="toggleImage" src="https://tse4.mm.bing.net/th?id=OIP.1d7M_81otkp1kVfh6gmTzAHaFj&pid=Api&P=0&h=180" alt="Placeholder Image 1">
+
+  <!-- Button to change image -->
+  <button id="changeImageButton">Change Image</button>
+  <button id="doubleClickButton">Double-Click </button>
+
+  <script>
+    // Select the image and button elements
+    const imageElement = document.getElementById("toggleImage");
+    const buttonElement = document.getElementById("changeImageButton");
+    const doubleClickButton = document.getElementById("doubleClickButton");
+    // Set initial flag
+    let isImageOne = true;
+
+    // Add event listener to button
+    buttonElement.addEventListener("click", () => {
+      if (isImageOne) {
+        // Change to Image 2
+        imageElement.src = "https://tse3.mm.bing.net/th?id=OIP.e2EsDuvRVb5SDT1qXlZipAHaE8&pid=Api&P=0&h=180";
+        imageElement.alt = "Placeholder Image 2";
+        buttonElement.textContent = "change Image";
+      } else {
+        // Change back to Image 1
+        imageElement.src = "https://tse4.mm.bing.net/th?id=OIP.1d7M_81otkp1kVfh6gmTzAHaFj&pid=Api&P=0&h=180";
+        imageElement.alt = "Placeholder Image 1";
+        buttonElement.textContent = "Change Image";
+      }
+      // Toggle flag
+      isImageOne = !isImageOne;
+    });
+    doubleClickButton.addEventListener("dblclick", () => {
+      if (isImageOne) {
+        // Change to another Image
+        imageElement.src = "https://tse3.mm.bing.net/th?id=OIP.e2EsDuvRVb5SDT1qXlZipAHaE8&pid=Api&P=0&h=180";
+        imageElement.alt = "Double-Click Image 2";
+      } else {
+        // Change back to the original Image
+        imageElement.src = "https://tse4.mm.bing.net/th?id=OIP.1d7M_81otkp1kVfh6gmTzAHaFj&pid=Api&P=0&h=180";
+        imageElement.alt = "Double-Click Image 1";
+      }
+      // Toggle flag
+      isImageOne = !isImageOne;
+    });
+
+    // Add event listener to handle double-click
+// const imageElement = document.getElementById("hoverImage");
+
+    // Add event listener for mouseover
+    imageElement.addEventListener("mouseover", () => {
+      imageElement.src = "https://tse3.mm.bing.net/th?id=OIP.e2EsDuvRVb5SDT1qXlZipAHaE8&pid=Api&P=0&h=180";
+      imageElement.alt = "Hovered Image";
+    });
+
+    // Add event listener for mouseout
+    imageElement.addEventListener("mouseout", () => {
+      imageElement.src = "https://tse4.mm.bing.net/th?id=OIP.1d7M_81otkp1kVfh6gmTzAHaFj&pid=Api&P=0&h=180";
+      imageElement.alt = "Original Image";
+    });
+    
+    
+  </script>
+</body>
+</html>
